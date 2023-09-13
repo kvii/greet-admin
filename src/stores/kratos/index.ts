@@ -9,7 +9,7 @@ export interface KratosErrorInit {
 
     /**
      * 错误原因，该原因为可枚举的字符串，
-     * 可供开发着判断错误类型。
+     * 可供开发者判断错误类型。
      */
     reason: string;
 
@@ -33,7 +33,7 @@ export class KratosError {
 
     /**
      * 错误原因，该原因为可枚举的字符串，
-     * 可供开发着判断错误类型。
+     * 可供开发者判断错误类型。
      */
     reason: string;
 

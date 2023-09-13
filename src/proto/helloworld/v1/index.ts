@@ -2,22 +2,29 @@
 /* eslint-disable camelcase */
 // @ts-nocheck
 
+// 错误原因
 export type ErrorReason =
+  // 用户名未指定
   | "GREETER_UNSPECIFIED"
+  // 用户不存在
   | "USER_NOT_FOUND";
-// The request message containing the user's name.
+// HelloRequest 类型定义了打招呼参数类型
 export type HelloRequest = {
+  // 用户名
   name: string | undefined;
 };
 
-// The response message containing the greetings
+// HelloReply 类型是打招呼的返回信息类型
 export type HelloReply = {
+  // 响应信息
   message: string | undefined;
 };
 
-// The greeting service definition.
+// Greeter 服务是打招呼服务
 export interface Greeter {
-  // Sends a greeting
+  // SayHello 方法进行一个招呼的打。
+  // 当用户名为 "404" 时应报错。错误原因是 "USER_NOT_FOUND"。
+  // 当用户名为 "400" 时应报错。错误原因是 "GREETER_UNSPECIFIED"。
   SayHello(request: HelloRequest): Promise<HelloReply>;
 }
 
