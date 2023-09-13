@@ -2,6 +2,9 @@
 /* eslint-disable camelcase */
 // @ts-nocheck
 
+export type ErrorReason =
+  | "GREETER_UNSPECIFIED"
+  | "USER_NOT_FOUND";
 // The request message containing the user's name.
 export type HelloRequest = {
   name: string | undefined;
@@ -52,8 +55,5 @@ export function createGreeterClient(
     },
   };
 }
-export type ErrorReason =
-  | "GREETER_UNSPECIFIED"
-  | "USER_NOT_FOUND";
 
 // @@protoc_insertion_point(typescript-http-eof)
